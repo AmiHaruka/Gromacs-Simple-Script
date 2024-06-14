@@ -6,7 +6,7 @@
 # 核心文件目录
 CORE_FILES_DIR="YOUTDIR"
 # 动力学参数文件目录
-MDP_FILES_DIR="mdp"
+MDP_FILES_DIR="YOURMDP"
 # 中间目录
 TMP_DIR="tmp-${CORE_FILES_DIR}"
 # 自定义调用的GROMACS程序
@@ -42,8 +42,7 @@ fi
 # 1. 生成坐标文件、拓扑文件及定义拓扑文件
 echo "Step 1: Generating coordinate and topology files..."
 $GROMACS_CMD pdb2gmx -f "$PDB_FILE" -o "$GRO_FILE" -p "$TOP_FILE"  -ignh
-$2
-$1
+
 
 cp posre.itp "$CORE_FILES_DIR"
 rm posre.itp
@@ -60,7 +59,6 @@ $GROMACS_CMD solvate -cp "$BOX_GRO_FILE" -cs spc216.gro -p "$TOP_FILE" -o "$SOL_
 echo "Step 4: Neutralizing the system..."
 $GROMACS_CMD grompp -f "$MDP_FILES_DIR/ions/ions.mdp" -c "$SOL_GRO_FILE" -p "$TOP_FILE" -o "$TMP_DIR/ions.tpr"
 $GROMACS_CMD genion -s "$TMP_DIR/ions.tpr" -o "$NEU_GRO_FILE"  -p "$TOP_FILE" -pname NA -nname CL -neutral
-$13
 
 # 5. 能量最小化 - 最速下降法
 echo "Step 5.1: Energy minimization using steepest descent..."
