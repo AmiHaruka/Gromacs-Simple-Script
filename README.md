@@ -21,11 +21,11 @@
    chmod +x run_gromacs_simulation.sh
    ```
 3. **执行脚本** :
-  ```bash
-  bash run_gmx.sh
-  ```
+   ```bash
+   bash run_gmx.sh
+   ```
 
-#备注
+# 备注
 请确保已安装GROMACS，并能从命令行调用。
 确保提供的文件路径和目录存在。
 该脚本默认假定参数文件和核心文件已准备好，如有需要请根据实际情况进行调整。
