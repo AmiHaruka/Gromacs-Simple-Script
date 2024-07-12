@@ -1,6 +1,6 @@
 # Gromacs-Simple-Script
 
-##执行前请优先阅读脚本
+## 执行前请优先阅读脚本
 
 > 注意，脚本的第**13-16**，**43**，**56**，**107**，**127**行可能不适配于所有体系，仅供参考
 
@@ -25,14 +25,14 @@
 
 ### 运行脚本
 
-1. **保存脚本**：将脚本保存为 `run_gromacs_simulation.sh`,调整有关参数。
+1. **保存脚本**：将脚本保存为 `Gromacs-Simple-Script.sh`,调整有关参数。
 2. **赋予执行权限**：
    ```bash
-   chmod +x run_gromacs_simulation.sh
+   chmod +x Gromacs-Simple-Script.sh
    ```
 3. **执行脚本**：
    ```bash
-   bash ./run_gromacs_simulation.sh 
+   bash ./Gromacs-Simple-Script.sh 
    ```
 
 ### 示例目录结构
@@ -78,7 +78,7 @@
 
 1. RMSD 分析
 2. RMSF 分析
-3. DSSP 分析(DSSP.dat文件将会置于{TMP_DIR}处)
+3. DSSP 分析
 
 所有分析结果都会存储在 `analysis` 目录中，便于后续的处理和分析。
 
